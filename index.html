@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rutina Gym</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #000000, #111111);
+      color: #f0f0f0;
+    }
+
+    header {
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(90deg, #000428, #004e92);
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    #timer {
+      text-align: center;
+      margin: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00aaff;
+    }
+
+    .day {
+      background: #0a0a0a;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,170,255,0.4);
+    }
+
+    .day h2 {
+      margin-top: 0;
+      border-bottom: 2px solid #00aaff;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border-radius: 10px;
+      transition: all 0.5s ease;
+    }
+
+    li.completed {
+      text-decoration: line-through;
+      background: rgba(0, 170, 255, 0.2);
+      color: #aaa;
+    }
+
+    .series-counter {
+      margin-right: 10px;
+      font-weight: bold;
+      color: #ff4444;
+    }
+
+    button {
+      background: linear-gradient(90deg, #ff4444, #cc0000);
+      border: none;
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    button:disabled {
+      background: #333;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <header>🏋️‍♂️ Mi Rutina Semanal</header>
+
+  <div id="timer">⏱ Descanso: --:--</div>
+
+  <!-- Lunes -->
+  <div class="day">
+    <h2>Lunes – Pecho y Hombros</h2>
+    <ul>
+      <li data-series="1"><span class="series-counter">1</span>Pecho: Press banca (calentamiento barra sola) → 30 seg <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Pecho: Press banca → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Hombros: Vuelos laterales → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Pecho: Abertura de mancuernas → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Hombros: Press Militar → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Pecho: Press inclinado con mancuernas → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Extra: Abdominales <button>✔</button></li>
+    </ul>
+  </div>
+
+  <!-- Martes -->
+  <div class="day">
+    <h2>Martes – Espalda (amplitud), Bíceps y Tríceps</h2>
+    <ul>
+      <li data-series="3"><span class="series-counter">3</span>Espalda: Jalón al pecho → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Espalda: Remo polea baja → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Bíceps: Curl martillo → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Espalda: Pullover con polea → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Bíceps: Curl bíceps barra W → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Tríceps: Press francés → 3×8 <button>✔</button></li>
+    </ul>
+  </div>
+
+  <!-- Miércoles -->
+  <div class="day">
+    <h2>Miércoles – Descanso</h2>
+    <p>😴 Día libre</p>
+  </div>
+
+  <!-- Jueves -->
+  <div class="day">
+    <h2>Jueves – Pecho y Hombros</h2>
+    <ul>
+      <li data-series="1"><span class="series-counter">1</span>Pecho: Press banca (calentamiento barra sola) → 30 seg <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Pecho: Press banca → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Hombros: Vuelos laterales → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Pecho: Abertura de mancuernas → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Hombros: Press Militar → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Pecho: Press inclinado con mancuernas → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Extra: Abdominales <button>✔</button></li>
+    </ul>
+  </div>
+
+  <!-- Viernes -->
+  <div class="day">
+    <h2>Viernes – Espalda, Bíceps y Tríceps</h2>
+    <ul>
+      <li data-series="3"><span class="series-counter">3</span>Espalda: Jalón al pecho agarre supino → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Espalda: Remo con barra → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Bíceps: Curl martillo → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Espalda: Face pull → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Bíceps: Curl bíceps barra W → 3×10 <button>✔</button></li>
+      <li data-series="3"><span class="series-counter">3</span>Tríceps: Press francés → 3×8 <button>✔</button></li>
+    </ul>
+  </div>
+
+  <script>
+    const timerEl = document.getElementById("timer");
+    let countdown;
+    let timeLeft = 0;
+
+    // Guardar progreso
+    function saveProgress() {
+      const progress = [];
+      document.querySelectorAll("li").forEach((li, index) => {
+        progress.push({
+          index,
+          remaining: li.dataset.remaining
+        });
+      });
+      localStorage.setItem("gymProgress", JSON.stringify(progress));
+      localStorage.setItem("lastReset", getWeekStart());
+    }
+
+    // Cargar progreso
+    function loadProgress() {
+      const lastReset = localStorage.getItem("lastReset");
+      if (lastReset !== getWeekStart()) {
+        localStorage.removeItem("gymProgress"); // reset semanal
+        return;
+      }
+
+      const progress = JSON.parse(localStorage.getItem("gymProgress")) || [];
+      document.querySelectorAll("li").forEach((li, index) => {
+        const saved = progress.find(p => p.index === index);
+        if (saved) {
+          li.dataset.remaining = saved.remaining;
+          li.querySelector(".series-counter").textContent = saved.remaining;
+          if (parseInt(saved.remaining) <= 0) {
+            li.classList.add("completed");
+            li.querySelector("button").disabled = true;
+          }
+        }
+      });
+    }
+
+    // Inicio de semana (lunes 00:00)
+    function getWeekStart() {
+      const now = new Date();
+      const day = now.getDay(); // 0 domingo ... 1 lunes
+      const diff = now.getDate() - day + (day === 0 ? -6 : 1);
+      const monday = new Date(now.setDate(diff));
+      monday.setHours(0,0,0,0);
+      return monday.toISOString();
+    }
+
+    // Cronómetro global
+    function startTimer(seconds) {
+      clearInterval(countdown);
+      timeLeft = seconds;
+      updateTimer();
+      countdown = setInterval(() => {
+        timeLeft--;
+        updateTimer();
+        if (timeLeft <= 0) {
+          clearInterval(countdown);
+          timerEl.textContent = "⏱ Descanso terminado";
+          if (navigator.vibrate) navigator.vibrate([500, 200, 500]);
+        }
+      }, 1000);
+    }
+
+    function updateTimer() {
+      const min = String(Math.floor(timeLeft / 60)).padStart(2, "0");
+      const sec = String(timeLeft % 60).padStart(2, "0");
+      timerEl.textContent = `⏱ Descanso: ${min}:${sec}`;
+    }
+
+    // Eventos
+    document.querySelectorAll("li").forEach((li) => {
+      const btn = li.querySelector("button");
+      const totalSeries = parseInt(li.dataset.series);
+      li.dataset.remaining = totalSeries;
+
+      btn.addEventListener("click", () => {
+        let remaining = parseInt(li.dataset.remaining);
+        if (remaining > 0) {
+          remaining--;
+          li.dataset.remaining = remaining;
+          li.querySelector(".series-counter").textContent = remaining;
+
+          if (remaining <= 0) {
+            li.classList.add("completed");
+            btn.disabled = true;
+          }
+          saveProgress();
+          startTimer(120); // 2 minutos
+        }
+      });
+    });
+
+    // Cargar progreso al inicio
+    loadProgress();
+  </script>
+</body>
+</html>
